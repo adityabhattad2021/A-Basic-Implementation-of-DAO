@@ -1,0 +1,19 @@
+const { network }= require("hardhat");
+
+
+async function moveTime(amount) {
+	console.log(
+		"-------------------------------------------------------------"
+	);
+    console.log("Moving Time...");
+    await network.provider.send("evm_increaseTime", [amount]);
+    console.log(`Moved forward by ${amount} seconds`);
+    console.log(
+		"-------------------------------------------------------------"
+	);
+}
+
+
+module.exports = {
+    moveTime,
+}
